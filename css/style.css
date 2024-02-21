@@ -1,0 +1,249 @@
+/* Added root directory in order to use variable colors*/
+:root {
+    --bluegreen: #2a607c;
+    --lightblue: #2589bd;
+    --blue: #0072bb;
+    --lightgray: #d9dcd6;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* Changed background-color to var(--lightgray) with the same value of #d9dcd6 */
+    background-color: var(--lightgray);
+}
+
+/* Removed . from .header after creating <header> in place of div class="header" */
+header {
+    /* Kept padding on top, left, and bottom, removed padding on right to mimic original page */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Changed value of background-color to var(--bluegreen). Color remains the same with the value #2a607c */
+    background-color: var(--bluegreen);
+    /* Changed value of color to var(--white). Color remains the same with the value #ffffff */
+    color: var(--white);
+    /* Turned header into a flexbox and aligned the items along the major axis using justify-content. 
+    This also begins to fix the problem when header is minimized and header elements spill over below */
+    display: flex;
+    justify-content: space-between;
+    /* Added position: fixed to allow the header to follow as we scroll down */
+    position: fixed;
+    /* Added top, right, and left and set to 0 to ensure header reaches all corners regardless of browser adjustments */
+    top: 0;
+    right: 0;
+    left: 0;
+    /* Set height to 95.5px, the height of the header in the original */
+    height: 95.5px;
+}
+/*Removed . from .header after creating <header> in place of div class="header" */
+header h1 {
+    display: inline-block;
+    font-size: 48px;
+}
+/*Removed . from .header after creating <header> in place of div class="header" */
+header h1 .seo {
+    /*Changed color to var(--lightgray). The color remains the same with the value #d9dcd6 */
+    color: var(--lightgray);
+}
+/*Removed . from .header after creating <header> in place of div class="header" */
+header div {
+    padding-top: 15px;
+    margin-right: 20px;
+    float: right;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+/* Removed . from .header after creating <header> in place of div class="header" */
+header div ul {
+    list-style-type: none;
+    /* Added a min-width value of 800px to the ul to fix the warping that occurred upon browser minimization */
+    min-width: 800px;
+
+}
+/* Removed . from .header after creating <header> in place of div class="header" */
+header div ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+a {
+    /* Changed value of color to var(--white). Color remains the same with the value #ffffff */
+    color: var(--white);
+    text-decoration: none;
+}
+
+p {
+    font-size: 16px;
+}
+
+.hero {
+    height: 800px;
+    width: 100%;
+    margin-bottom: 25px;
+    /* Added margin-top of 95.5px (height of header) after adding position:fixed to header */
+    margin-top: 95.5px;
+    background-image: url("../images/digital-marketing-meeting.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.float-left {
+    float: left;
+    margin-right: 25px;
+}
+
+.float-right {
+    float: right;
+    margin-left: 25px;
+}
+
+/* Renamed class="content" to class="main" in html, referring to area under hero and above footer.
+Turned this area into a two column grid, to fix the misalignment on the bottom
+and to increase synchronicity in this main area of the webpage when adjusting browser size. */
+.main {
+    display: grid;
+    /* Created a two-column grid. One side takes up 75% of the div, and other side takes up 25% */
+    grid-template-columns: 75fr 25fr;
+    /* Margin on left and right */
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+/* Renamed class="benefits" to "right-column" as this makes more sense on the webpage.
+See .right-column below */
+.benefits {
+}
+/* Renamed class="benefit-lead" to class="lead-generation" as this is the title of the section */
+.lead-generation {
+    margin-bottom: 32px;
+    /* Changed value of color to var(--white). Color remains the same with the value #ffffff */
+    color: var(--white);
+}
+/* Renamed class="benefit-brand" to class="brand-awareness" as this is the title of the section */
+.brand-awareness {
+    margin-bottom: 32px;
+    /* Changed value of color to var(--white). Color remains the same with the value #ffffff */
+    color: var(--white);
+}
+/* Renamed class="benefit-cost" to class="cost-management" as this is the title of the section */
+.cost-management {
+    margin-bottom: 32px;
+    /* Changed value of color to var(--white). Color remains the same with the value #ffffff */
+    color: var(--white);
+}
+
+.lead-generation h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.brand-awareness h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.cost-management h3 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.lead-generation img {
+    display: block;
+    margin: 10px auto;
+    max-width: 150px;
+}
+
+.brand-awareness img {
+    display: block;
+    margin: 10px auto;
+    max-width: 150px;
+}
+
+.cost-management img {
+    display: block;
+    margin: 10px auto;
+    max-width: 150px;
+}
+
+/* Added class="left-column" and class="right-column" to create a grid on class="main" */
+.left-column{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.right-column {
+    margin-left: 15px;
+    margin-bottom: 20px;
+    background-color: var(--lightblue);
+    justify-content: center;
+    padding: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Adjustments to the containers in the left column.
+Used , to select multiple classes. */
+.search-engine-optimization,
+.online-reputation-management,
+.social-media-marketing{
+    /* Added a min and max height to set dimensional constraints to these elements upon browser resizing */
+    min-height: 300px;
+    max-height: 550px;
+    margin-bottom: 20px;
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 50px;
+}
+
+/* Adjustments to the containers in the right column.
+Used , to seleect multiple classes. */
+.lead-generation,
+.brand-awareness,
+.cost-management {
+    background-color: var(--lightblue);
+    color: var(--white);
+}
+
+.search-engine-optimization img {
+    max-height: 200px;
+}
+
+.online-reputation-management img {
+    max-height: 200px;
+}
+
+.social-media-marketing img {
+    max-height: 200px;
+}
+
+.search-engine-optimization h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.online-reputation-management h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.social-media-marketing h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+/* Removed . from .footer after making it a semantic element */
+footer {
+    padding: 30px;
+    clear: both;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+/* Removed . from .footer after making it a semantic element */
+footer h2 {
+    font-size: 20px;
+}
